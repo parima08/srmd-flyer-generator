@@ -10,7 +10,6 @@
     <!-- <script type="text/javascript" src="js/roll.js"></script> --> 
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,200,600,700,900' rel='stylesheet' type='text/css'>
@@ -22,9 +21,29 @@
   </head>
   <body>
     <button id="btn-download">Download</button>
-    <canvas id ="canvas" width ="500" height="600"></cans>
+    <canvas id ="canvas" width ="500" height="600"></canvas>
+    <div class = "form-container">
+      <form id="myForm">
+        
+        <h4>Date</h4>
+        <input type="text" name="date"  placeholder="Date (ex: 7 May)"/><br/>
+        
+        
+        <h4>Time</h4>
+        <input type="text" name="time" placeholder="Time (ex: 7:00pm to 8:00pm)"/><br/>
+        
+        <h4>Location Line 1</h4>
+        <input type="text" name="location1"  placeholder="Address Line 1"/><br/>
 
-    
+        <h4>Location Line 2</h4>
+        <input type="text" name="location2"  placeholder="Address Line 2"/><br/>
+
+        <h4>Location Line 3</h4>
+        <input type="text" name="location3"  placeholder="Address Line 3"/><br/>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     

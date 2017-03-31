@@ -1,13 +1,22 @@
-var GOLD = "#DAAB02"
+var GOLD = "#DAAB02"; 
+var DATE = "date", 
+    TIME = "time", 
+    LOCATION1 = "location1", 
+    LOCATION2 = "location2", 
+    LOCATION3 = "location3"; 
+
 $(function(){
+
+
 	console.log("hello");
 	var canvas = $("#canvas")[0];
 	console.log(canvas); 
 	var context = canvas.getContext('2d');
 	context.imageSmoothingEnabled = false;
 	var img = new Image();
+	values = {date: "", time: "", location1: "", location2: "", location3: ""}
 	img.onload = function(){
-         drawImageScaled(img, context)
+         drawImageScaled(values, img, context)
      };
      img.src = "img/london_flyer.jpg"; 
 
@@ -17,11 +26,21 @@ $(function(){
     	z
     	$("#btn-download").attr("href", dataURL);
     	$("#btn-download").attr("download", "SSY");
-     })
+     }); 
+
+     $("#myForm").on('submit', function(e){
+		var values = {};
+		$.each($('#myForm').serializeArray(), function(i, field) {
+		    values[field.name] = field.value;
+		});
+
+		drawImageScaled(values, img, context)
+		e.preventDefault(); 
+	});
 
 });
 
-function drawImageScaled(img, ctx) {
+function drawImageScaled(values, img, ctx) {
    	var canvas = ctx.canvas ;
    	image_ratio = img.height/img.width; 
    	canvas_width_shld_be = 500; 
@@ -35,24 +54,24 @@ function drawImageScaled(img, ctx) {
 	ctx.font = "12pt Noto Serif";
 	ctx.fillStyle = GOLD;
 	ctx.textAlign = "right";
-	ctx.fillText("7th November", canvas.width - 212, canvas.height - 212, 400);
+	ctx.fillText(values[DATE], canvas.width - 212, canvas.height - 212, 400);
   	
 	//TIMINGS
 	ctx.font = "12pt Noto Serif";
 	ctx.fillStyle = "white"
 	ctx.textAlign = "left";
-	ctx.fillText("8:00pm to 10:00pm", canvas.width - 200, canvas.height - 212, 400);
+	ctx.fillText(values[TIME], canvas.width - 200, canvas.height - 212, 400);
 
 	//LOCATION1
 	ctx.font = "12pt Noto Serif";
 	ctx.fillStyle = "white"
 	ctx.textAlign = "right";
-	ctx.fillText("BAPS Shri Swaminarayan Mandir", canvas.width - 50, canvas.height - 170, 400);
+	ctx.fillText(values[LOCATION1], canvas.width - 50, canvas.height - 170, 400);
 	//LOCATION2
-	ctx.fillText("105-119 Brentfield Road", canvas.width - 50, canvas.height - 150, 400);
+	ctx.fillText(values[LOCATION2], canvas.width - 50, canvas.height - 150, 400);
 
 	//LOCATION3
-	ctx.fillText("Neasden, London NW10 8LD", canvas.width - 50, canvas.height - 130, 400);
+	ctx.fillText(values[LOCATION3], canvas.width - 50, canvas.height - 130, 400);
 
    // var vRatio =  canvas.height / img.height  ;
    // var ratio  = Math.min ( hRatio, vRatio );

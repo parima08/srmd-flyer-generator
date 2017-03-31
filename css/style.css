@@ -1,7 +1,19 @@
 body{
-	
+	font-family: "Source Sans Pro", sans-serif;
 }
 canvas{
 	background-color: blue;
 	margin: 0 auto;
+}
+
+.form-container{
+	background-color: #DCDCDC;
+	border: 1px solid #0A0A0A;
+	position: absolute;
+	box-sizing: "border-box";
+	right: 100px;
+	padding: 10px;
+	top: 20px;
+	width: 450px;
+	height: 600px;
 }
