@@ -52,6 +52,7 @@
     
     <script src="js/main.js"></script>
     <script>
+      checkIfLoggedIn(); 
       function checkIfLoggedIn(){
         var auth2 = gapi.auth2.getAuthInstance();
         var loggedIn = auth2.isSignedIn.get(); 
