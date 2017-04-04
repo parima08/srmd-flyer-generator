@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta name="google-signin-client_id" content="687165989292-7k8b2asag891bt36n2dosrf0ltech7qd.apps.googleusercontent.com">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Flyer Experiment</title>
 
@@ -19,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
   </head>
   <body>
     <button id="btn-download">Download</button>
@@ -49,5 +51,17 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     
     <script src="js/main.js"></script>
+    <script>
+      function checkIfLoggedIn(){
+        var loggedIn = GoogleAuth.isSignedIn.get()
+        if(loggedIn){
+          alert("I'm logged in");
+        }
+        //var auth2 = gapi.auth2.getAuthInstance();
+        // GoogleAuth.isSignedIn.listen(function(){
+        //   alert("i'm logged in!"); 
+        // }); 
+      }
+    </script>
   </body>
 </html>
