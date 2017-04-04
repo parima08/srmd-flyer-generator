@@ -53,7 +53,8 @@
     <script src="js/main.js"></script>
     <script>
       function checkIfLoggedIn(){
-        var loggedIn = GoogleAuth.isSignedIn.get()
+        var auth2 = gapi.auth2.getAuthInstance();
+        var loggedIn = auth2.isSignedIn.get(); 
         if(loggedIn){
           alert("I'm logged in");
         }
