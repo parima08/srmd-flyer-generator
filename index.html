@@ -63,7 +63,7 @@
             scope: 'profile'
         }).then(function () {
           // Listen for sign-in state changes.
-          gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+          // gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
 
           loggedIn =  gapi.auth2.getAuthInstance().isSignedIn.get(); 
           if(loggedIn){
