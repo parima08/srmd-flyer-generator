@@ -77,14 +77,14 @@
     </script> -->
     <script>
 
-      $(function(){
-        initClient(); 
-      }); 
+      // $(function(){
+      //   initClient(); 
+      // }); 
 
-      // window.onLoadCallback = function(){
-      //   initClient();
-      //   //checkIfLoggedIn(); 
-      // }
+      window.onLoadCallback = function(){
+        initClient();
+        //checkIfLoggedIn(); 
+      }
      
       function initClient() {
         gapi.auth2.getAuthInstance(); 
