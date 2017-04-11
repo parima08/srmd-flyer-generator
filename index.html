@@ -37,7 +37,7 @@
         <input type="text" name="time" placeholder="Time (ex: 7:00pm to 8:00pm)"/><br/>
         
         <h4>Location Line 1</h4>
-        <input type="text" name="location1"  placeholder="Address Line 1"/><br/>
+        <input type="text" name="location1"  placeholder="Address Line 1"/<br/>
 
         <h4>Location Line 2</h4>
         <input type="text" name="location2"  placeholder="Address Line 2"/><br/>
@@ -75,26 +75,33 @@
 
   }); 
     </script> -->
-    <script>
+   <!--  <script>
 
       // $(function(){
       //   initClient(); 
       // }); 
 
       window.onLoadCallback = function(){
+        console.log("On Load Callback"); 
         initClient();
         //checkIfLoggedIn(); 
       }
      
       function initClient() {
-        gapi.auth2.getAuthInstance(); 
-        // gapi.load('auth2', function() {
-        //   auth2 = gapi.auth2.init({
-        //     client_id: '687165989292-7k8b2asag891bt36n2dosrf0ltech7qd.apps.googleusercontent.com',
-        //     scope: 'profile'
-        //   });
-        // }); 
+        // var auth2 = gapi.auth2.getAuthInstance(); 
+        // if(auth2.isSignedIn){
+        //   alert("Signed in"); 
+        // }
+        // else{
+        //   alert("Signed Out"); 
+        // }
+        gapi.load('auth2', function() {
+          auth2 = gapi.auth2.init({
+            client_id: '687165989292-7k8b2asag891bt36n2dosrf0ltech7qd.apps.googleusercontent.com',
+            scope: 'profile'
+          });
+        }); 
       }
-    </script>
+    </script> -->
   </body>
 </html>
