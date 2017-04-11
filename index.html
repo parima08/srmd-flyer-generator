@@ -87,45 +87,13 @@
       // }
      
       function initClient() {
-        // Initialize the client with API key and People API, and initialize OAuth with an
-        // OAuth 2.0 client ID and scopes (space delimited string) to request access.
-        // apiKey: 'YOUR_API_KEY',
-        //     discoveryDocs: ["https://people.googleapis.com/$discovery/rest?version=v1"],
 
         gapi.load('auth2', function() {
-        auth2 = gapi.auth2.init({
-          client_id: '687165989292-7k8b2asag891bt36n2dosrf0ltech7qd.apps.googleusercontent.com',
-          fetch_basic_profile: false,
-          scope: 'profile'
-        });
-      
-        // var auth2 = gapi.client.init({
-        //     clientId: '687165989292-7k8b2asag891bt36n2dosrf0ltech7qd.apps.googleusercontent.com',
-        //     scope: 'profile'
-        // }); 
-        // .then(function () {
-        //   // Listen for sign-in state changes.
-        //   // gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-
-        //   loggedIn =  auth2.isSignedIn.get(); 
-        //   if(loggedIn){
-        //     alert("I'm logged in!"); 
-        //   }
-        //   // Handle the initial sign-in state.
-        //   // updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-        // });
-      }
-
-      function checkIfLoggedIn(){
-        var auth2 = gapi.auth2.getAuthInstance();
-        var loggedIn = auth2.isSignedIn.get(); 
-        if(loggedIn){
-          alert("I'm logged in");
-        }
-        //var auth2 = gapi.auth2.getAuthInstance();
-        // GoogleAuth.isSignedIn.listen(function(){
-        //   alert("i'm logged in!"); 
-        // }); 
+          auth2 = gapi.auth2.init({
+            client_id: '687165989292-7k8b2asag891bt36n2dosrf0ltech7qd.apps.googleusercontent.com',
+            scope: 'profile'
+          });
+        }); 
       }
     </script>
   </body>
