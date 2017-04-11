@@ -76,6 +76,12 @@
   }); 
     </script> -->
     <script>
+     var auth2 = sessionStorage.getItem("auth2"); 
+     loggedIn =  auth2.isSignedIn.get(); 
+     if(loggedIn){
+      alert("I'm logged in!"); 
+     }
+
       window.onLoadCallback = function(){
         initClient();
         checkIfLoggedIn(); 
