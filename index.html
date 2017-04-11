@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <meta name="google-signin-client_id" content="687165989292-7k8b2asag891bt36n2dosrf0ltech7qd.apps.googleusercontent.com">
+     <meta name="google-signin-client_id" content="687165989292-7k8b2asag891bt36n2dosrf0ltech7qd.apps.googleusercontent.com?onload=onLoadCallback">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Flyer Experiment</title>
 
@@ -76,8 +76,11 @@
   }); 
     </script> -->
     <script>
-      initClient();
-      checkIfLoggedIn(); 
+      window.onLoadCallback = function(){
+        initClient();
+        checkIfLoggedIn(); 
+      }
+     
       function initClient() {
         // Initialize the client with API key and People API, and initialize OAuth with an
         // OAuth 2.0 client ID and scopes (space delimited string) to request access.
