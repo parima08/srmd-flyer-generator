@@ -68,9 +68,10 @@
       });
 
     loggedIn =  gapi.auth2.getAuthInstance().isSignedIn.get(); 
-          if(loggedIn){
-            alert("I'm logged in!"); 
-          }
+    console.log("GAPI: " + loggedIn);
+    if(loggedIn){
+      alert("I'm logged in!"); 
+    }
 
   }); 
     </script>
