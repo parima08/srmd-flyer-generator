@@ -86,10 +86,12 @@
         // OAuth 2.0 client ID and scopes (space delimited string) to request access.
         // apiKey: 'YOUR_API_KEY',
         //     discoveryDocs: ["https://people.googleapis.com/$discovery/rest?version=v1"],
-        var auth2 = gapi.client.init({
-            clientId: '687165989292-7k8b2asag891bt36n2dosrf0ltech7qd.apps.googleusercontent.com',
-            scope: 'profile'
-        }).then(function () {
+        var auth2 = gapi.auth2.getAuthInstance()
+        // var auth2 = gapi.client.init({
+        //     clientId: '687165989292-7k8b2asag891bt36n2dosrf0ltech7qd.apps.googleusercontent.com',
+        //     scope: 'profile'
+        // })
+        .then(function () {
           // Listen for sign-in state changes.
           // gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
 
