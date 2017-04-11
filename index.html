@@ -53,15 +53,37 @@
     
     <script src="js/main.js"></script>
     <script>
-      initClient(); 
+    var gapiPromise = (function(){
+      var deferred = $.Deferred();
+      window.onLoadCallback = function(){
+        deferred.resolve(gapi);
+      };
+      return deferred.promise()
+    }());
+
+  var authInited = gapiPromise.then(function(){
+    gapi.auth2.init({
+        client_id: '687165989292-7k8b2asag891bt36n2dosrf0ltech7qd.apps.googleusercontent.com',
+        scope: 'profile'
+      });
+
+    loggedIn =  gapi.auth2.getAuthInstance().isSignedIn.get(); 
+          if(loggedIn){
+            alert("I'm logged in!"); 
+          }
+
+  }); 
+    </script>
+   <!--  <script>
+      initClient();
       checkIfLoggedIn(); 
       function initClient() {
         // Initialize the client with API key and People API, and initialize OAuth with an
         // OAuth 2.0 client ID and scopes (space delimited string) to request access.
         // apiKey: 'YOUR_API_KEY',
         //     discoveryDocs: ["https://people.googleapis.com/$discovery/rest?version=v1"],
-        gapi.client.init({
-            clientId: ' 687165989292-7k8b2asag891bt36n2dosrf0ltech7qd.apps.googleusercontent.com',
+        var auth2 = gapi.client.init({
+            clientId: '687165989292-7k8b2asag891bt36n2dosrf0ltech7qd.apps.googleusercontent.com',
             scope: 'profile'
         }).then(function () {
           // Listen for sign-in state changes.
@@ -87,6 +109,6 @@
         //   alert("i'm logged in!"); 
         // }); 
       }
-    </script>
+    </script> -->
   </body>
 </html>
